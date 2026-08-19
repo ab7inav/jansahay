@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #F7F9FC; /* JANSAHAY Background */
+  --color-foreground: #101828; /* JANSAHAY Text */
+  
+  --color-jansahay-navy: #0B1F3A;
+  --color-jansahay-blue: #1769AA;
+  --color-jansahay-cyan: #00A6B2;
+  --color-jansahay-purple: #6941C6;
+  --color-jansahay-red: #D92D20;
+  --color-jansahay-green: #238B57;
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --color-primary: #0B1F3A; /* Navy */
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #F7F9FC;
+  --color-secondary-foreground: #667085; /* Secondary text */
+  
+  --color-muted: #F7F9FC;
+  --color-muted-foreground: #667085;
+  
+  --color-accent: #1769AA;
+  --color-accent-foreground: #FFFFFF;
+  
+  --color-destructive: #D92D20;
+  --color-destructive-foreground: #FFFFFF;
+  
+  --color-border: #E4E7EC; /* light border */
+  --color-input: #E4E7EC;
+  --color-ring: #1769AA;
+  
+  --color-card: #FFFFFF; /* Surface */
+  --color-card-foreground: #101828;
+  
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #101828;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-jansahay-blue/20 selection:text-jansahay-navy;
+  }
+  html {
+    @apply font-sans;
+  }
+}
