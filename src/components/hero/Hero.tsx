@@ -1,23 +1,46 @@
-import { ProblemInput } from "@/components/problem-input/ProblemInput";
+"use client";
+
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { SaarthiSVG } from "@/components/saarthi/SaarthiSVG";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { ProblemInput } from "@/components/problem-input/ProblemInput";
 
 export function Hero() {
+  const { t } = useLanguage();
+  
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section className="relative pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-jansahay-blue/10 via-jansahay-bg to-jansahay-bg"></div>
       
-      <div className="container mx-auto px-4 md:px-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-jansahay-navy max-w-3xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
-          Having trouble with something? <br className="hidden sm:block" />
-          <span className="text-jansahay-blue">Let's find your next step.</span>
-        </h1>
+      <div className="container mx-auto px-4 md:px-6 text-center flex flex-col items-center">
+        <div className="mb-6">
+          <SaarthiSVG size={140} />
+        </div>
         
-        <p className="mt-6 text-lg md:text-xl text-jansahay-text-secondary max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-both">
-          Tell JANSAHAY what happened. We'll help you understand the process, documents and next steps.
-        </p>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-jansahay-navy mb-6">
+              {t('hero.title').split('. ').map((part: string, i: number, arr: string[]) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && '. '}
+                  {i === 0 && <br className="hidden md:block" />}
+                </span>
+              ))}
+            </h1>
+            
+            <p className="text-lg md:text-xl lg:text-2xl text-jansahay-text-secondary max-w-2xl mx-auto mb-10">
+              {t('hero.subtitle')}
+            </p>
+          </motion.div>
 
         <ProblemInput />
 

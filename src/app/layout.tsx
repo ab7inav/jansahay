@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { SaarthiProvider } from "@/components/saarthi/SaarthiProvider";
+import { SaarthiFloating } from "@/components/saarthi/SaarthiFloating";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +29,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <SaarthiProvider>
+              {children}
+              <SaarthiFloating />
+            </SaarthiProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

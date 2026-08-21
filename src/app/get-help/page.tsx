@@ -1,11 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { ArrowLeft, Mic, ArrowRight } from "lucide-react";
 import { serviceCategories } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 
 export default function GetHelpPage() {
+  const router = useRouter();
+  const [problem, setProblem] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (problem.trim()) {
+      router.push(`/ask?q=${encodeURIComponent(problem)}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-jansahay-bg flex flex-col">
       {/* Minimal Header */}
@@ -29,18 +41,20 @@ export default function GetHelpPage() {
           </h1>
 
           {/* Main Problem Input */}
-          <div className="relative flex items-center bg-white rounded-2xl shadow-sm border border-jansahay-blue/20 p-2 focus-within:ring-2 focus-within:ring-jansahay-blue/50 focus-within:border-jansahay-blue transition-all mb-4">
+          <form onSubmit={handleSubmit} className="relative flex items-center bg-white rounded-2xl shadow-sm border border-jansahay-blue/20 p-2 focus-within:ring-2 focus-within:ring-jansahay-blue/50 focus-within:border-jansahay-blue transition-all mb-4">
             <input
               type="text"
               autoFocus
+              value={problem}
+              onChange={(e) => setProblem(e.target.value)}
               className="flex-1 bg-transparent px-4 py-4 text-lg md:text-xl outline-none placeholder:text-jansahay-text-secondary/60 text-jansahay-text"
               placeholder="Describe your problem..."
               aria-label="Describe your problem"
             />
-            <button className="bg-jansahay-navy hover:bg-jansahay-navy/90 text-white p-4 rounded-xl transition-colors flex items-center justify-center aspect-square" aria-label="Submit problem">
+            <button type="submit" disabled={!problem.trim()} className="bg-jansahay-navy hover:bg-jansahay-navy/90 text-white p-4 rounded-xl transition-colors flex items-center justify-center aspect-square disabled:opacity-50" aria-label="Submit problem">
               <ArrowRight className="w-6 h-6" />
             </button>
-          </div>
+          </form>
 
           <div className="flex items-center justify-center mb-12">
             <button className="flex items-center gap-2 text-jansahay-text-secondary hover:text-jansahay-blue transition-colors text-sm font-medium py-2 px-4 rounded-full hover:bg-jansahay-blue/5">
@@ -62,6 +76,7 @@ export default function GetHelpPage() {
               return (
                 <button
                   key={category.id}
+                  onClick={() => router.push('/dashboard')}
                   className={cn(
                     "flex flex-col items-center justify-center text-center p-4 md:p-6 rounded-2xl border bg-white transition-all hover:shadow-md hover:-translate-y-1 group",
                     category.urgent ? "border-jansahay-red/20 hover:border-jansahay-red/40" : "border-border hover:border-jansahay-blue/30"

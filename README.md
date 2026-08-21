@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JANSAHAY: AI for Every Indian
 
-## Getting Started
+JANSAHAY is a civic-tech citizen-support platform designed to help people navigate government processes, schemes, institutional procedures, documents, legal processes, and emergencies across India.
 
-First, run the development server:
+It features a multimodal conversational interface allowing users to Type, Speak, and Upload images, all guided by the interactive AI mascot, **Saarthi**.
 
+## 🏗️ Architecture
+
+JANSAHAY is built as a production-ready MVP using modern web technologies:
+
+- **Frontend:** Next.js (App Router), React, Tailwind CSS, shadcn/ui
+- **Animation:** Framer Motion (for Saarthi physics & gestures)
+- **AI Engine:** Anthropic Claude 3.5 Sonnet (Multimodal Vision + Text)
+- **Database:** PostgreSQL + pgvector (for RAG document retrieval)
+- **Storage:** S3-Compatible Object Storage (Secure Vault)
+- **i18n:** Dynamic Client-side Dictionary Engine (10 Indian Languages)
+
+## 🚀 Getting Started
+
+### 1. Clone & Install
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-org/jansahay-ai.git
+cd jansahay-ai
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Environment Setup
+Copy the example environment file:
+```bash
+cp .env.example .env.local
+```
+Then, edit `.env.local` to include your actual API keys. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*Note: The platform features a **Graceful Fallback Mock Engine**. If `ANTHROPIC_API_KEY` is not provided, the application will still run and demonstrate the UI flows using simulated API responses.*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 🌐 Multilingual Support
 
-To learn more about Next.js, take a look at the following resources:
+JANSAHAY supports 10 languages natively:
+English, हिन्दी, বাংলা, తెలుగు, தமிழ், मराठी, ગુજરાતી, ಕನ್ನಡ, മലയാളം, ਪੰਜਾਬੀ.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The language state is persisted in `localStorage` and managed globally by `LanguageProvider`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔒 Security Principles
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Never** expose API keys to the frontend.
+- Uploaded documents are passed to the server securely, parsed, and immediately discarded from memory unless stored in an encrypted S3 vault.
+- Responses regarding legal or medical emergencies always prioritize safety and official sources over AI generation.

@@ -1,0 +1,176 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "getHelp": "Get Help",
+    "continue": "Continue",
+    "search": "Search..."
+  },
+  "nav": {
+    "home": "Home",
+    "ask": "Ask JANSAHAY",
+    "docs": "Documents",
+    "emergency": "Emergency",
+    "history": "History",
+    "profile": "Profile",
+    "howItWorks": "How it works",
+    "servicesNav": "Services",
+    "safety": "Safety",
+    "about": "About",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Your problem. Your next step.",
+    "subtitle": "Navigating government services and legal processes made simple for every Indian."
+  },
+  "saarthi": {
+    "hello": "Namaste! 🙏 I'm Saarthi. Let me help you.",
+    "listening": "I'm listening...",
+    "thinking": "Let me understand that...",
+    "confused": "Just one thing I need to understand...",
+    "guiding": "Start here.",
+    "success": "Nice! One step done.",
+    "emergency": "Let's focus on your safety."
+  },
+  "ai": {
+    "targetTitle": "Check Eligibility",
+    "actionSummary": "Here is how to get your certificate.",
+    "button": "Check now"
+  },
+  "dashboard": {
+    "title": "Hello,",
+    "subtitle": "What can we help you with today?",
+    "quick": "Quick Actions",
+    "ask": "Ask a Question",
+    "docs": "Upload Document",
+    "track": "Track Status",
+    "recent": "Recent Journeys",
+    "viewAll": "View All"
+  },
+  "docs": {
+    "title": "Your Documents",
+    "subtitle": "Securely store and manage your government IDs and certificates.",
+    "upload": "Upload New Document",
+    "verify": "Verify Document",
+    "vault": "Secure Vault"
+  },
+  "emergency": {
+    "title": "Emergency Help",
+    "subtitle": "Tap any button below for immediate assistance.",
+    "police": "Police",
+    "ambulance": "Ambulance",
+    "fire": "Fire",
+    "women": "Women Helpline",
+    "cyber": "Cyber Crime"
+  },
+  "profile": {
+    "title": "Profile",
+    "settings": "Settings",
+    "security": "Security & Privacy",
+    "notifications": "Notifications",
+    "accessibility": "Accessibility",
+    "help": "Help & Support",
+    "logout": "Log Out",
+    "protected": "Protected",
+    "enabled": "Enabled",
+    "about": "About JANSAHAY"
+  },
+  "landing": {
+    "trust": "Recognized across India",
+    "services": "What do you need help with?",
+    "journey": "How JANSAHAY Works",
+    "accessibility": "Built for Everyone",
+    "security": "Bank-Grade Security",
+    "footer": "JANSAHAY. AI for Every Indian.",
+    "servicesSub": "Select a category or simply tell us your problem. We'll guide you through the process step-by-step.",
+    "journeySub": "A simple process designed to get you from confusion to clarity."
+  },
+  "services": {
+    "govTitle": "Government Help",
+    "govDesc": "Services, schemes and applications",
+    "docsTitle": "Documents",
+    "docsDesc": "Understand documents and requirements",
+    "policeTitle": "Police & Cybercrime",
+    "policeDesc": "Know what to do after a cybercrime or police issue",
+    "legalTitle": "Legal Information",
+    "legalDesc": "Understand procedures and official information",
+    "healthTitle": "Health Navigation",
+    "healthDesc": "Find the right next step",
+    "emergencyTitle": "Emergency",
+    "emergencyDesc": "Get immediate safety guidance",
+    "unsureTitle": "Not sure",
+    "unsureDesc": "Just tell us what happened"
+  },
+  "trustItems": {
+    "verified": "Verified information",
+    "protected": "Your information is protected",
+    "guidance": "Clear step-by-step guidance"
+  },
+  "journeySteps": {
+    "step1Title": "Tell us",
+    "step1Desc": "Describe what happened in your own words.",
+    "step2Title": "We understand",
+    "step2Desc": "Our AI analyzes your problem and finds the official procedure.",
+    "step3Title": "Get your action plan",
+    "step3Desc": "Receive a simple, step-by-step guide on what to do next.",
+    "step4Title": "Take the next step",
+    "step4Desc": "Proceed with confidence and get the help you need."
+  },
+  "access": {
+    "title": "Help in the way you're comfortable with.",
+    "subtitle": "Technology shouldn't be a barrier. JANSAHAY is designed to be accessible, understandable, and simple for everyone.",
+    "f1t": "Text",
+    "f1d": "Type naturally",
+    "f2t": "Voice",
+    "f2d": "Speak directly",
+    "f3t": "Simple language",
+    "f3d": "No jargon",
+    "f4t": "Multilingual",
+    "f4d": "Local language support"
+  },
+  "sec": {
+    "protected": "Protected",
+    "secure": "Your data is secure",
+    "title": "Your information matters.",
+    "subtitle": "We treat your personal information, documents, and problems with the utmost confidentiality and security.",
+    "f1": "Encrypted information",
+    "f2": "Secure authentication",
+    "f3": "Document integrity",
+    "f4": "Privacy-first design"
+  },
+  "input": {
+    "btnVoice": "Explain by voice",
+    "subVoice": "Tap to speak",
+    "btnDoc": "Show us a document",
+    "subDoc": "Upload an image",
+    "btnText": "Describe your problem",
+    "subText": "Type it out",
+    "placeholder": "Tell us what problem you are facing...",
+    "askBtn": "Ask Saarthi"
+  },
+  "proactive": {
+    "hey": "Hey! I found an important update that may be useful for you.",
+    "explain": "Explain this to me",
+    "later": "Remind me later",
+    "source": "View source",
+    "thinking": "Analyzing relevance...",
+    "cat_education": "Education",
+    "cat_health": "Health",
+    "cat_safety": "Safety",
+    "cat_government": "Government",
+    "cat_documents": "Document"
+  },
+  "updates": {
+    "scholarship": {
+      "title": "New Student Scholarship Announced",
+      "summary": "A new central government scholarship has been announced for students. You may be eligible to apply."
+    },
+    "cyber": {
+      "title": "Cyber Security Warning",
+      "summary": "A new phishing scam targeting bank accounts has been detected. Please do not share OTPs."
+    },
+    "doc": {
+      "title": "Aadhaar Linking Deadline",
+      "summary": "The deadline to link your Aadhaar card with your PAN has been extended. Ensure your documents are updated."
+    }
+  }
+}

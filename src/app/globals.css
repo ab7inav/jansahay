@@ -4,45 +4,75 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: #F7F9FC; /* JANSAHAY Background */
-  --color-foreground: #101828; /* JANSAHAY Text */
+:root {
+  --radius: 0.75rem;
+
+  /* Base */
+  --background: #F7F9FC;
+  --foreground: #101828;
+  --border-color: #E4E7EC;
   
-  --color-jansahay-navy: #0B1F3A;
-  --color-jansahay-blue: #1769AA;
-  --color-jansahay-cyan: #00A6B2;
-  --color-jansahay-purple: #6941C6;
-  --color-jansahay-red: #D92D20;
-  --color-jansahay-green: #238B57;
+  /* JANSAHAY Brand */
+  --jansahay-navy: #0B1F3A;
+  --jansahay-blue: #1769AA;
+  --jansahay-cyan: #00A6B2;
+  --jansahay-purple: #6941C6;
+  --jansahay-red: #D92D20;
+  --jansahay-green: #238B57;
+  --jansahay-text-secondary: #667085;
+  --jansahay-bg: #F7F9FC;
+  
+  /* Surface */
+  --surface-bg: #FFFFFF;
+  --surface-hover: #F9FAFB;
+}
+
+.dark {
+  /* Base */
+  --background: #0B1120;
+  --foreground: #F8FAFC;
+  --border-color: #1E293B;
+  
+  /* JANSAHAY Brand (Adapted for Dark Mode) */
+  --jansahay-navy: #F8FAFC; 
+  --jansahay-blue: #38BDF8;
+  --jansahay-cyan: #22D3EE;
+  --jansahay-purple: #C084FC;
+  --jansahay-red: #F87171;
+  --jansahay-green: #4ADE80;
+  --jansahay-text-secondary: #94A3B8;
+  --jansahay-bg: #0F172A;
+  
+  /* Surface */
+  --surface-bg: #1E293B;
+  --surface-hover: #334155;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border-color);
+  
+  --color-jansahay-navy: var(--jansahay-navy);
+  --color-jansahay-blue: var(--jansahay-blue);
+  --color-jansahay-cyan: var(--jansahay-cyan);
+  --color-jansahay-purple: var(--jansahay-purple);
+  --color-jansahay-red: var(--jansahay-red);
+  --color-jansahay-green: var(--jansahay-green);
+  --color-jansahay-text-secondary: var(--jansahay-text-secondary);
+  --color-jansahay-bg: var(--jansahay-bg);
+  --color-jansahay-text: var(--foreground);
+  --color-ring: var(--jansahay-blue);
+  
+  /* Add custom white for text contrast if needed, but we'll map white to surface-bg for cards */
+  --color-white: var(--surface-bg);
+  --color-gray-50: var(--surface-hover);
+  --color-gray-100: var(--surface-hover);
+  --color-gray-200: var(--border-color);
   
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   
-  --color-primary: #0B1F3A; /* Navy */
-  --color-primary-foreground: #FFFFFF;
-  
-  --color-secondary: #F7F9FC;
-  --color-secondary-foreground: #667085; /* Secondary text */
-  
-  --color-muted: #F7F9FC;
-  --color-muted-foreground: #667085;
-  
-  --color-accent: #1769AA;
-  --color-accent-foreground: #FFFFFF;
-  
-  --color-destructive: #D92D20;
-  --color-destructive-foreground: #FFFFFF;
-  
-  --color-border: #E4E7EC; /* light border */
-  --color-input: #E4E7EC;
-  --color-ring: #1769AA;
-  
-  --color-card: #FFFFFF; /* Surface */
-  --color-card-foreground: #101828;
-  
-  --color-popover: #FFFFFF;
-  --color-popover-foreground: #101828;
-
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -52,13 +82,9 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-  --radius: 0.75rem;
-}
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground antialiased selection:bg-jansahay-blue/20 selection:text-jansahay-navy;
